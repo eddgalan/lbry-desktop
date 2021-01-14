@@ -1,12 +1,9 @@
 .livestream {
-  min-height: 50vh;
-  overflow: visible;
-  //   width: 100%;
   flex: 1;
-  height: 100%;
   width: 100%;
-
+  padding-top: calc(var(--aspect-ratio-standard) + 32px); // 32px for bitwaves logo below the player
   position: relative;
+  border-radius: var(--border-radius);
 
   iframe {
     height: 100%;
@@ -16,4 +13,35 @@
     right: 0;
     bottom: 0;
   }
+}
+
+.livestream__comments {
+  height: calc(100vh - var(--header-height) - (var(--spacing-xl) * 7)) !important;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: var(--font-small);
+}
+
+.livestream__comment {
+  margin-top: var(--spacing-s);
+}
+
+.livestream__comment-meta {
+  color: var(--color-text-help);
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+
+  :first-child {
+    margin-right: var(--spacing-xs);
+  }
+}
+
+.livestream__comment-author {
+  font-weight: var(--font-weight-bold);
+}
+
+.livestream__comment-create {
+  margin-top: var(--spacing-s);
 }
